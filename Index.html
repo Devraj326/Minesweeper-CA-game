@@ -1,0 +1,87 @@
+
+
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Form Input Wave Animation</title>
+  <link rel="stylesheet" href="./start.css">
+  <link rel="ico" href="#"/>
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!DOCTYPE html>  
+ <html lang="en">  
+  <head>  
+   <meta charset="UTF-8" />  
+   <meta name="viewport" content="width=device-width, initial-scale=1.0" />  
+   <link rel="stylesheet" href="start.css" />  
+   <title>Form Input Wave</title>  
+  </head>  
+  <body>
+    <div class="mian"> 
+        <div class="image">
+            <img class="mines" src="miness.png" alt="">
+        </div>
+        <div class="ins">
+            <button><a href="instruction.html">Instruction</a></button>
+        </div>
+    </div> 
+     
+     
+   <div class="container"> 
+    
+    <h1>Welcome</h1>  
+    <div>  
+     <div class="form-control">  
+      <input type="text" id="name" required>  
+      <label>Name</label>  
+         </div>  
+     <div class="form-control">  
+      <input type="text" id="nickname" required>  
+      <label>Nick name</label>  
+     </div>  
+     <div  class="submit-btn"><a class="btnbtn" id="Play" href="game.html"  target="_blank"><span class="btn">Play</span></a> </div>
+     
+    </div>  
+   </div> 
+   <!-- <script src="App.js"></script> -->
+   <script src="script.js"></script>
+   <script>
+    const playerNameInput = document.getElementById('name');
+    const playerNickNameInput = document.getElementById('nickname');
+
+
+if (playerNameInput && playerNickNameInput) {
+  playerNameInput.addEventListener('input', (e) => {
+    const playerName = e.target.value;
+    localStorage.setItem('playerName', playerName);
+  });
+
+  playerNickNameInput.addEventListener('input', (e) => {
+    const playerNickName = e.target.value;
+    localStorage.setItem('playerNickname', playerNickName);
+  });
+
+  const playButton = document.getElementById('play');
+  playButton.addEventListener('click', (e) => {
+    const playerName = playerNameInput.value.trim();
+    const playerNickName = playerNickNameInput.value.trim();
+
+    if (playerName === '' || playerNickName === '') {
+      e.preventDefault();
+      alert('Please provide input for both Name and Nickname.');
+      return;
+    }
+  });
+}
+   </script>
+  </body>  
+ </html>
+<!-- partial -->
+  <!-- <script  src="./App.js"></script> -->
+  <script  src="./script.js"></script>
+
+</body>
+</html>
